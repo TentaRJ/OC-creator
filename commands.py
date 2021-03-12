@@ -6,8 +6,7 @@ from gimmick_ideas import *
 
 class commands:
   def add():
-    print(f'\nADD\n')
-    print('Arguments:\n[Main, Personality, Gimmick]\n')
+    print('\n-----\nArguments:\n[Main, Personality, Gimmick]\n')
     print('Example: "Robot, Cheerful, Obsessive"' )
     i=str(input("What do you want to add?\nDon't forget to add ','\nType CANCEL to cancel!\nType NONE to not add an argument!\n\n"))
     stop=False
@@ -30,7 +29,7 @@ class commands:
       main.close()
       main=open('main_ideas.py', 'w')
       if stop==False:
-        main.write(f'{data[:-1]}, "{i[0]}"]')
+        main.write(f"{data[:-1]}, '{i[0]}']")
       if stop==True:
         main.write(data)
       main.close()
@@ -46,7 +45,7 @@ class commands:
       main.close()
       main=open('personality_ideas.py', 'w')
       if stop==False:
-        main.write(f'{data[:-1]}, "{i[1]}"]')
+        main.write(f"{data[:-1]}, '{i[1]}']")
       if stop==True:
         main.write(data)
       main.close()
@@ -62,14 +61,14 @@ class commands:
       main.close()
       main=open('gimmick_ideas.py', 'w')
       if stop==False:
-        main.write(f'{data[:-1]}, "{i[2]}"]')
+        main.write(f"{data[:-1]}, '{i[2]}']")
       if stop==True:
         main.write(data)
       main.close()
       print("\nAll done!\n")
 
   def view():
-    print(f'\nVisible values are:\n1. main_ideas\n2. personality_ideas\n3. gimmick_ideas')
+    print(f'\n-----\nVisible values are:\n1. main_ideas\n2. personality_ideas\n3. gimmick_ideas')
     try:
       i=input(f'What would you like to view? ')
     except:
@@ -85,11 +84,20 @@ class commands:
       return
     main=open(value, "r")
     data=main.read()
-    print(f'Results:\n{data}')
+    if 'main_ideas=[' in data:
+      start=12
+    if 'personality_ideas=[' in data:
+      start=19
+    if 'gimmick_ideas=[' in data:
+      start=15
+    print(f'\nValues are:')
+    data=data[start:-1]
+    for x in data.split(', '):
+      print(x)
     time.sleep(1)
 
   def gen():
-    print(f'\nGenerating!')
+    print(f'\n-----\nGenerating!')
     time.sleep(1.3)
     main=0
     for x in main_ideas:
@@ -106,11 +114,11 @@ class commands:
 
   def genmult():
     try:
-      i=int(input("How many ideas would you like to generate?\n(NUMBERS ONLY, MAX OF 10)\n"))
+      i=int(input("\n-----\nHow many ideas would you like to generate?\n(NUMBERS ONLY, MAX OF 10)\n"))
     except:
       print('\nError! Did you put a number in?\n')
       return
-    print(f'\nGenerating!')
+    print(f'\n-----\nGenerating!')
     time.sleep(1.3)
     if i >=11:
       print("No more than 10 at a time...")

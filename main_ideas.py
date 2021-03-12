@@ -1,1 +1,1 @@
-main_ideas=["Robot", "Slime Girl"]
+main_ideas=['Robot', 'Slime', 'Shadow Figure', 'Kitchen Object']

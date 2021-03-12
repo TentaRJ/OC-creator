@@ -13,6 +13,7 @@ time.sleep(2)
 
 while active==True:
   time.sleep(1)
+  print('-----')
   main=0
   for x in main_ideas:
     main=main+1
@@ -22,7 +23,7 @@ while active==True:
   gim=0
   for x in gimmick_ideas:
     gim=gim+1
-  print(f'Availabe:\n{main} main ideas\n{per} personality ideas\n{gim} gimmick ideas\n\nActions available:\n')
+  print(f'Available:\n{main} main ideas\n{per} personality ideas\n{gim} gimmick ideas\n\nActions available:\n')
   y=0
   for x in actions:
     y=y+1

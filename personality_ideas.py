@@ -1,1 +1,1 @@
-personality_ideas=["Happy", "Sad"]
+personality_ideas=['Happy', 'Sad']
