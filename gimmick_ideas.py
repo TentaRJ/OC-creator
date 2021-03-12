@@ -1,0 +1,1 @@
+gimmick_ideas=['Fire breath', 'Insanity', 'Cursed']

@@ -1,0 +1,1 @@
+personality_ideas=["Happy", "Sad"]

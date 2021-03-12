@@ -1,0 +1,1 @@
+main_ideas=["Robot", "Slime Girl"]
